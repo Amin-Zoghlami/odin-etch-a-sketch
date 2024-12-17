@@ -17,11 +17,13 @@ function createGrid (num) {
 }
 
 function addHovering(square) {
-    square.addEventListener("mouseover", () => {
-        const r = Math.floor(Math.random() * 256); 
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        square.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
+    square.addEventListener("mousemove", (e) => {
+        if (e.buttons === 1) { 
+            const r = Math.floor(Math.random() * 256); 
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
+        }
     });
 }
 
