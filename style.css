@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    height: 800px;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    border: 1px solid black; 
+}
