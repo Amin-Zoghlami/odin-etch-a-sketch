@@ -18,6 +18,8 @@ function createGrid (num) {
 
 function addHovering(square) {
     square.addEventListener("mousemove", (e) => {
+        e.preventDefault();
+
         if (e.buttons === 1) { 
             const r = Math.floor(Math.random() * 256); 
             const g = Math.floor(Math.random() * 256);
@@ -25,15 +27,19 @@ function addHovering(square) {
             square.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
         }
     });
+
+    square.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+    });
 }
 
 const body = document.querySelector("body");
 
 const title = document.querySelector("h1");
-addHovering(title);
+// addHovering(title);
 
 const button = document.querySelector(".grid-size");
-addHovering(button);
+// addHovering(button);
 button.addEventListener("click", () => {
     const num = prompt("Choose a size between 1 - 100");
     if (!(0 < num && num <= 100)) {
